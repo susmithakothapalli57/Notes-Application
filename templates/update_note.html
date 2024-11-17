@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Update Note</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Update Note</h1>
+            
+            <form method="POST" action="/update/{{ note.id }}">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="title" id="title" class="form-control" value="{{ note.title }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea name="content" id="content" class="form-control" rows="5" required>{{ note.content }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Note</button>
+            </form>
+        </div>
+    </body>
+    </html> 
+    
